@@ -100,9 +100,10 @@ private void signup(ActionEvent event) {
         String roleUtilisateur = null;
         
     // Récupérer les valeurs des champs de texte
+        String email = emailTextField.getText();
+
     String nom = nomTextField.getText();
     String prenom = prenomTextField.getText();
-    String email = emailTextField.getText();
     String adresse = adresseTextField.getText();
     String password = passwordTextField.getText();
     String confirmPassword = confirmPasswordTextField.getText();

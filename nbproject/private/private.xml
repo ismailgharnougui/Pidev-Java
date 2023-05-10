@@ -5,13 +5,17 @@
         <group>
             <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/services/CRUDLivreurs.java</file>
             <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/javaFx/EspaceController.java</file>
+            <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/javaFx/GuiSignupController.java</file>
+            <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/models/Livreurs.java</file>
+            <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/javaFx/Afficher_Livreur.fxml</file>
+            <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/gestionpanier/GestionPanier.java</file>
             <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/javaFx/Afficher_LivreurController.java</file>
             <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/javaFx/AjouterController.java</file>
+            <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/javaFx/Modifier_utilisateurController.java</file>
             <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/javaFx/GuiAdminController.java</file>
-            <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/models/Livreurs.java</file>
+            <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/services/CRUDReclamation.java</file>
             <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/javaFx/GuiBackofficeUserController.java</file>
             <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/javaFx/GuiHomeController.java</file>
-            <file>file:/C:/Users/ismae/Downloads/GestionPanier/GestionPanier/src/javaFx/Afficher_Livreur.fxml</file>
         </group>
     </open-files>
 </project-private>

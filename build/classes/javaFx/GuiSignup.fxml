@@ -73,7 +73,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="passwordLabel" layoutX="92.0" layoutY="487.0" prefHeight="27.0" prefWidth="236.0" textFill="RED">
+            <Label fx:id="passwordLabel" layoutX="55.0" layoutY="511.0" prefHeight="27.0" prefWidth="236.0" textFill="RED">
                <font>
                   <Font size="18.0" />
                </font>

@@ -8,6 +8,7 @@ package gestionpanier;
 import java.sql.SQLException;
 import models.Article;
 import models.Command;
+import models.Reclamation;
 import models.User;
 import services.CRUDReclamation;
 import services.CRUDReponse;
@@ -50,7 +51,7 @@ public class GestionPanier {
         //System.out.println(su.login("ismail.elgharnougui@esprit.tn", "123456")); 
         
         
-        su.login("ismail.elgharnougui@esprit.tn", "123456");
+        //su.login("ismail.elgharnougui@esprit.tn", "123456");
         //Article a = new Article(19,26 , "mod2", "mod2", 12, "url2");
         //sa.modifierArticle(a);
         //System.out.println( sa.get(2));
@@ -80,13 +81,17 @@ public class GestionPanier {
         //sc.supprimer(3);
         //System.out.println(sc.recupererCommClient(32));      
         //sc.afficherCommands();
-        sc.modifierCommand(new Command(1, "check"));   
+        //sc.modifierCommand(new Command(1, "check"));   
         
         CRUDReclamation rec = new CRUDReclamation();
         //rec.afficherReclamation();
         
         CRUDReponse rep = new CRUDReponse();
         //rep.afficherReponse();
+        
+        CRUDReclamation sr = new CRUDReclamation();
+        //sr.afficherReclamation();
+        sr.ajouterReclamation(new Reclamation("vrvr", "rvrv", "dg ffg", "rzerf", 32));
     }
     
 }

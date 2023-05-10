@@ -68,16 +68,16 @@ public class Modifier_utilisateurController implements Initializable {
     private PasswordField passwordTextField;
     @FXML
     private PasswordField confirmPasswordTextField;
-    @FXML
     private RadioButton roleArtiste;
-    @FXML
-    private ToggleGroup roleUser;
-    @FXML
     private RadioButton roleClient;
     @FXML
     private Button fx_button;
     @FXML
     private ImageView qr_code;
+    @FXML
+    private TextField cinTextField;
+    @FXML
+    private TextField telTextField;
 
     /**
      * Initializes the controller class.
@@ -85,10 +85,16 @@ public class Modifier_utilisateurController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+                emailTextField.setText(user.getEmail());
+
         nomTextField.setText(user.getNom());
         prenomTextField.setText(user.getPrenom());
-        emailTextField.setText(user.getEmail());
         adresseTextField.setText(user.getAddress());
+        passwordTextField.setText(user.getPass());
+       confirmPasswordTextField.setText(user.getPass());
+        cinTextField.setText(user.getCin()+"");
+        telTextField.setText(user.getNumero()+"");
+      
     }
 
     @FXML
@@ -116,6 +122,8 @@ public class Modifier_utilisateurController implements Initializable {
         String adresse = adresseTextField.getText();
         String password = passwordTextField.getText();
         String confirmPassword = confirmPasswordTextField.getText();
+        String cin = cinTextField.getText();
+        String tel = telTextField.getText();
 
         // Initialiser les messages d'erreur à vide
         String nomError = "";
@@ -159,19 +167,12 @@ public class Modifier_utilisateurController implements Initializable {
         if (!password.equals(confirmPassword)) {
             confirmPasswordError = "Les mots de passe ne correspondent pas";
         }
-
-        // set the user role
-        if (roleArtiste.isSelected()) {
-            roleUtilisateur = "Artiste";
-        }
-        if (roleClient.isSelected()) {
-            roleUtilisateur = "Client";
-        }
-
+        
         // Si aucune erreur n'a été détectée, créer un nouvel utilisateur et l'ajouter à la base de données
         if (nomError.isEmpty() && prenomError.isEmpty() && emailError.isEmpty() && adresseError.isEmpty() && passwordError.isEmpty() && confirmPasswordError.isEmpty()) {
-            User user2 = new User(user.getId(), nom, prenom, email, adresse,roleUtilisateur, password);
-
+        
+        User user2 = new User(user.getId(), password, email,nom, prenom, adresse, "client" ,  Integer.parseInt(cin) , Integer.parseInt(tel));
+            System.out.println("user2: " + user2);
             try {
                     su.modifierUser(user2);
                     

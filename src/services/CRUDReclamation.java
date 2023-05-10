@@ -28,11 +28,11 @@ Connection conn = MyConnection.getInstance().getConnection();
     public void ajouterReclamation(Reclamation r) {
     try {
         ste = conn.createStatement();
-        String req = "Insert into Reclamation(TypeR, etat, Description,objet,iduser) values('"+r.getTypeR()+"','"+r.getEtat()+"','"+r.getDescription()+"','"+r.getObjet()+"','"+r.getIdUser()+"')";
+        String req = "Insert into Reclamation(TypeR, etat, Description,objet,id_user) values('"+r.getTypeR()+"','"+r.getEtat()+"','"+r.getDescription()+"','"+r.getObjet()+"','"+r.getIdUser()+"')";
         ste.executeUpdate(req);
         System.out.println("Reclamation ajouté");
     } catch (SQLException ex) {
-            System.out.println("Reclamation non ajouté!!!!");    }
+            System.out.println(ex);    }
     }
 
      
@@ -74,7 +74,7 @@ Connection conn = MyConnection.getInstance().getConnection();
         ResultSet result = ste.executeQuery(req);
         
         while (result.next()) {
-            Reclamation resultReclamation = new Reclamation(result.getInt("id"),result.getString("TypeR"),result.getString("Description"), result.getString("objet"), result.getString("dateR"), result.getString("etat"),result.getInt("iduser"));
+            Reclamation resultReclamation = new Reclamation(result.getInt("id"),result.getString("TypeR"),result.getString("Description"), result.getString("objet"), result.getString("dateR"), result.getString("etat"),result.getInt("id_user"));
             rec.add(resultReclamation);
         }
         System.out.println(rec);
@@ -92,11 +92,11 @@ public  ObservableList<Reclamation> afficherReclamation(int idUser) {
     }
     ObservableList<Reclamation> rec = FXCollections.observableArrayList();
         try {
-        String req = "SELECT * FROM Reclamation where iduser = '" +idUser+"'" ;
+        String req = "SELECT * FROM Reclamation where id_user = '" +idUser+"'" ;
         ResultSet result = ste.executeQuery(req);
         
         while (result.next()) {
-            Reclamation resultReclamation = new Reclamation(result.getInt("id"),result.getString("TypeR"),result.getString("Description"), result.getString("objet"), result.getString("dateR"), result.getString("etat"),result.getInt("iduser"));
+            Reclamation resultReclamation = new Reclamation(result.getInt("id"),result.getString("TypeR"),result.getString("Description"), result.getString("objet"), result.getString("dateR"), result.getString("etat"),result.getInt("id_user"));
             
             rec.add(resultReclamation);
         }
@@ -119,7 +119,7 @@ public Reclamation getReclamationById(int id) {
         ResultSet result = ste.executeQuery(req);
         
         while (result.next()) {
-            Reclamation resultReclamation = new Reclamation(result.getInt("id"),result.getString("TypeR"),result.getString("Description"), result.getString("objet"), result.getString("dateR"), result.getString("etat"),result.getInt("iduser"));
+            Reclamation resultReclamation = new Reclamation(result.getInt("id"),result.getString("TypeR"),result.getString("Description"), result.getString("objet"), result.getString("dateR"), result.getString("etat"),result.getInt("id_user"));
             return resultReclamation;
         }
       
